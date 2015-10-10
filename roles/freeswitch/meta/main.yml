@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  author: Mathias WOLFF
+  description: FreeSwitch installation and management
+  company: CELEA Consulting
+  license: GPLv3
+  min_ansible_version: 1.8
+  platforms:
+  - name: Ubuntu
+    versions:
+    - trusty
+  - name: Debian
+    versions:
+    - wheezy
+  categories:
+  - system
+dependencies: []  
