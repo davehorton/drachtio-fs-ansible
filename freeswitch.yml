@@ -1,0 +1,8 @@
+- hosts: all
+  sudo: yes
+  vars_files:
+    - 'roles/freeswitch/defaults/main.yml'
+  tasks:
+    - include: 'roles/freeswitch/tasks/main.yml'
+  handlers:
+    - include: 'roles/freeswitch/handlers/main.yml'
