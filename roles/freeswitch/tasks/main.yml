@@ -96,3 +96,18 @@
 - file: path=/var/log/freeswitch.log owner={{freeswitch_owner}} group={{freeswitch_group}}
 
 - file: path=/etc/cron.daily/freeswitch_log_rotation mode="a+x"
+
+- name: remove default sip_profiles
+  shell: /bin/rm -rf {{freeswitch_path}}conf/sip_profiles/*
+
+- name: copy drachtio sip_profile file
+  copy: src={{drachtio_sip_profile_template}} dest={{freeswitch_path}}conf/sip_profiles/drachtio_mrf.xml
+
+- name: copy drachtio dialplan file
+  copy: src={{drachtio_socket_dialplan_template}} dest={{freeswitch_path}}conf/dialplan/public/drachtio.xml
+
+- name: start freeswitch
+  shell: /usr/local/freeswitch/bin/freeswitch -nc
+
+- name: verify drachtio_mrf sofia profiles from fs_cli
+  shell: fs_cli -x "sofia status" 
