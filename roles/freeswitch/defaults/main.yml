@@ -10,3 +10,5 @@ freeswitch_init_template: ../templates/freeswitch.init #init script template
 freeswitch_configure_command: configure # freeswicth configure command - you can add option
 freeswitch_log_rotate_script: ../templates/freeswitch_log_rotation # log management script
 freeswitch_log_conf_template: ../templates/logfile.conf.xml # freeswitch log configuration file template
+drachtio_sip_profile_template: ../templates/drachtio_mrf_profile.xml # drachtio sip_profile
+drachtio_dialplan_template: ../templates/drachtio_dialplan.xml # drachtio dialplan
