@@ -104,10 +104,10 @@
   copy: src={{drachtio_sip_profile_template}} dest={{freeswitch_path}}conf/sip_profiles/drachtio_mrf.xml
 
 - name: copy drachtio dialplan file
-  copy: src={{drachtio_socket_dialplan_template}} dest={{freeswitch_path}}conf/dialplan/public/drachtio.xml
+  copy: src={{drachtio_dialplan_template}} dest={{freeswitch_path}}conf/dialplan/public/drachtio.xml
 
 - name: start freeswitch
   shell: /usr/local/freeswitch/bin/freeswitch -nc
 
 - name: verify drachtio_mrf sofia profiles from fs_cli
-  shell: fs_cli -x "sofia status" 
+  shell: fs_cli -x "sofia status"
