@@ -1,7 +1,0 @@
-<include>
-  <extension name="drachtio">
-    <condition field="destination_number" expression="^(drachtio)$">
-      <action application="socket" data="127.0.0.1:8081 async full"/>
-    </condition>
-  </extension>
-</include>
